@@ -5,6 +5,7 @@ export interface Counter {
 
 export const counter = (): Counter => {
   let count = 0
+
   const listeners: Array<(c: number) => void> = []
 
   const increment = (step: number = 1) => {
