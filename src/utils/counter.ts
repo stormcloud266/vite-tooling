@@ -1,4 +1,9 @@
-export const counter = () => {
+export interface Counter {
+  increment: (step?: number) => void
+  subscribe: (listener: (c: number) => void) => void
+}
+
+export const counter = (): Counter => {
   let count = 0
   const listeners: Array<(c: number) => void> = []
 
