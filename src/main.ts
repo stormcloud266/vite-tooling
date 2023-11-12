@@ -1,10 +1,11 @@
 import './style.css'
 
 import { counter } from './utils/counter'
+import { getElementByIdOrThrow } from './utils/getElement'
 
-const display = document.getElementById('display')!
-const add = document.getElementById('add')!
-const subtract = document.getElementById('subtract')!
+const display = getElementByIdOrThrow('display')
+const add = getElementByIdOrThrow<HTMLButtonElement>('add')
+const subtract = getElementByIdOrThrow<HTMLButtonElement>('subtract')
 
 const mainCounter = counter()
 
